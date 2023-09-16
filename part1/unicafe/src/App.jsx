@@ -21,17 +21,34 @@ function App() {
   const Statistics = () => {
     const countAll = bad + neutral + good
     const positive = (good / countAll * 100).toFixed(4)
-    const average = ((countAll) / 3).toFixed(4) + ' %'
-    return (
-      <table>
+    const countAverage = () => {
+      const good_ = 1 * good
+      const neutral_ = 0
+      const bad_ = -1 * bad
+      return (good_ + neutral_+bad_) / countAll
+    }
+    const average = (countAverage()).toFixed(4)
+    if (countAll === 0) {
+      return (
+        <>
+        <p>No Feedback Given</p>
+        </>
+      )
+    }
+    else {
+      return (
+        <>
+        <table>
         <StatisticLine text="good" value={good} />
         <StatisticLine text="neutral" value={neutral} />
         <StatisticLine text="bad" value={bad} />
-        <StatisticLine text="all" value={parseFloat(countAll).toFixed(4)} />
+        <StatisticLine text="all" value={countAll} />
         <StatisticLine text="average" value={average} />
-        <StatisticLine text="positive" value={isNaN(positive) ? 0 : positive} />
+        <StatisticLine text="positive" value={isNaN(positive) ? 0 : positive  + ' %'} />
       </table>
-    )
+        </>
+      )
+    }
   }
   return (
     <div>
