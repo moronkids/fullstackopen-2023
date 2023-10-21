@@ -5,7 +5,7 @@ function List({filterName, persons}) {
   const filteredResult = filterName !== '' ? persons.filter((v,i) => v.name.toLowerCase() === filterName.toLowerCase() || v.name.match(regexPattern)) : persons
   return (
       <>
-            <h2>Numbers</h2>
+
       {filteredResult?.map((v) => {
         return (
           <>

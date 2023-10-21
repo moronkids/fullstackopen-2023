@@ -6,7 +6,7 @@ function Filter({filterName, setFilterName}) {
 
     return (
         <>
-            <h2>Phonebook</h2>
+
             filter shown with : <input value={filterName} type="text" onChange={(e) => setFilterName(e.target.value)} />
         </>
     )

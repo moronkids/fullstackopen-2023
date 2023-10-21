@@ -28,7 +28,7 @@ function Create({persons, setPersons}) {
     }
     return (
         <>
-            <h2>Add New</h2>
+
             <form onSubmit={submitNewPerson}>
                 <div>
                     name: <input value={newName} onChange={(e) => addNewPerson(e.target.value, e)} required />
